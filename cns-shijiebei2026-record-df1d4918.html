@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于世界杯的一页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(145deg, #fde8cd 0%, #f6d5b3 30%, #f3cba5 70%, #efbc8f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .card {
+            max-width: 820px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(2px);
+            border-radius: 36px;
+            box-shadow: 0 20px 40px rgba(160, 100, 50, 0.18), 0 8px 16px rgba(0, 0, 0, 0.06);
+            padding: 2.8rem 2.6rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 28px 48px rgba(140, 80, 30, 0.20);
+        }
+
+        .hero-kick {
+            display: block;
+            font-size: 0.95rem;
+            letter-spacing: 1.5px;
+            color: #b57a4f;
+            text-transform: uppercase;
+            margin-bottom: 0.7rem;
+            font-weight: 500;
+            opacity: 0.8;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            color: #3f2c1b;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #5f4a35;
+            line-height: 1.6;
+            margin-bottom: 2.2rem;
+            border-left: 4px solid #dba977;
+            padding-left: 1.2rem;
+            background: rgba(235, 195, 150, 0.08);
+            border-radius: 0 12px 12px 0;
+        }
+
+        .intro-text {
+            font-size: 1.02rem;
+            line-height: 1.7;
+            color: #2f241b;
+            margin-bottom: 2rem;
+        }
+
+        .intro-text a {
+            color: #b56d38;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid #ecccae;
+            padding-bottom: 1px;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .intro-text a:hover {
+            color: #8d4f22;
+            border-bottom-color: #b56d38;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 1.8rem;
+            margin: 2.2rem 0 2.6rem;
+        }
+
+        .feature-item {
+            flex: 1 1 180px;
+            background: #fbf3eb;
+            padding: 1rem 1.2rem;
+            border-radius: 18px;
+            border: 1px solid #f2dfcf;
+            transition: background 0.15s, transform 0.1s;
+            list-style: none;
+        }
+
+        .feature-item:hover {
+            background: #f7e9db;
+            transform: translateY(-2px);
+        }
+
+        .feature-item strong {
+            display: block;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #4f3623;
+            margin-bottom: 0.35rem;
+        }
+
+        .feature-item span {
+            font-size: 0.95rem;
+            color: #6b523b;
+            line-height: 1.4;
+        }
+
+        .story-signpost {
+            background: #f8ede2;
+            border-radius: 22px;
+            padding: 1.6rem 1.8rem;
+            margin: 2rem 0 2.2rem;
+            border: 1px solid #ebd7c4;
+        }
+
+        .story-signpost p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #2f231a;
+        }
+
+        .story-signpost a {
+            color: #b56d38;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1.5px solid #dbb58c;
+        }
+
+        .story-signpost a:hover {
+            color: #8d4f22;
+            border-bottom-color: #a85f2a;
+        }
+
+        .closing-note {
+            border-top: 1px solid #ebd2bd;
+            padding-top: 1.8rem;
+            margin-top: 0.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .closing-note p {
+            font-size: 0.98rem;
+            color: #4d3b2b;
+            line-height: 1.6;
+            flex: 2 1 200px;
+        }
+
+        .gentle-link {
+            display: inline-block;
+            background: #dfb896;
+            color: #2f1f13;
+            padding: 0.7rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 550;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 8px rgba(160, 100, 50, 0.12);
+            letter-spacing: 0.3px;
+            flex: 0 0 auto;
+            text-align: center;
+        }
+
+        .gentle-link:hover {
+            background: #d0a67b;
+            box-shadow: 0 6px 14px rgba(140, 80, 40, 0.18);
+        }
+
+        .footnote {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: #7d664f;
+            text-align: right;
+            border-top: 1px solid #ecdac9;
+            padding-top: 1.2rem;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 2rem 1.2rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .feature-grid {
+                flex-direction: column;
+                gap: 0.9rem;
+            }
+            .feature-item {
+                flex: 1 1 auto;
+            }
+            .closing-note {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+            .gentle-link {
+                width: 100%;
+                padding: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <span class="hero-kick">⚽ 四年一度 · 绿茵舞台</span>
+        <h1>关于一座球场外的<Br>稳定入口</h1>
+        <div class="subhead">
+            从一场比赛到一个页面 —— 信息与情感都值得被温和地安放。
+        </div>
+
+        <div class="intro-text">
+            有人因为球员的一次突破而爱上奔跑，有人因为一首主题曲而记住整个夏天。<a href="https://cns-shijiebei2026.com">世界杯</a>是一段集体记忆，也是许多人生活中一个小小的坐标。它不只是一项赛事，更像一种节奏——每四年，大家不约而同地把目光聚拢到同一块绿茵上。页面的存在，也是为了让这份关注有一个可以被依赖的地方：简洁、清晰、不绕路。
+        </div>
+
+        <ul class="feature-grid">
+            <li class="feature-item">
+                <strong>信息的位置</strong>
+                <span>赛程、球队、场馆——每一条都放在它该在的地方，不藏也不乱。</span>
+            </li>
+            <li class="feature-item">
+                <strong>语言的温度</strong>
+                <span>中文叙述，没有生硬翻译腔，读起来像朋友聊天时提起的那场球。</span>
+            </li>
+            <li class="feature-item">
+                <strong>视觉的呼吸</strong>
+                <span>暖白底色、圆角卡片、柔和阴影，让你待得住，看得进。</span>
+            </li>
+            <li class="feature-item">
+                <strong>稳定的锚点</strong>
+                <span>无论你从哪一年开始关注，这里都是一个不变的首页。</span>
+            </li>
+        </ul>
+
+        <div class="story-signpost">
+            <p>
+                记得2018年夏天，朋友发来一个链接，说“这里能看到完整的比赛日历”。那时候页面还很简单，但那种“终于找到了一个靠谱地方”的感觉，一直留到现在。<br>
+                后来2022年，页面换了配色，加上了球队巡礼和经典瞬间。每次打开，都像翻开一本不断更新的册子。<br>
+                一个能长久信赖的网址，本身就在讲故事。<a href="https://cns-shijiebei2026.com">世界杯</a>这三个字，不只是赛事名称——也是一扇始终敞开的门。
+            </p>
+        </div>
+
+        <div class="closing-note">
+            <p>
+                页面没有弹窗、没有倒计时焦虑，也没有夺人眼球的横幅。它只想保持自己的节奏：有一说一，温和克制。如果你想在喧嚣里找一个安静又真切的角落，不妨从这里开始。
+            </p>
+            <a href="https://cns-shijiebei2026.com" class="gentle-link">世界杯</a>
+        </div>
+
+        <div class="footnote">
+            一份安静的首页 · 献给所有把足球放进生活里的人
+        </div>
+    </div>
+</body>
+</html>
