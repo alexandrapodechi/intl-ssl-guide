@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日常中的世界杯 · 一组温和的查询与对照</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(145deg, #fde9da 0%, #f7d7b5 40%, #f3cb9c 100%);
+            font-family: "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            line-height: 1.7;
+            color: #3d2e1f;
+        }
+
+        .page-card {
+            max-width: 820px;
+            width: 100%;
+            background-color: rgba(255, 255, 252, 0.92);
+            backdrop-filter: blur(2px);
+            border-radius: 36px;
+            padding: 2.8rem 2.5rem;
+            box-shadow: 0 16px 40px -12px rgba(120, 70, 30, 0.25), 0 4px 12px rgba(0,0,0,0.03);
+            transition: box-shadow 0.25s ease;
+        }
+
+        .page-card:hover {
+            box-shadow: 0 20px 44px -10px rgba(110, 60, 25, 0.30);
+        }
+
+        .opening {
+            font-size: 1.85rem;
+            font-weight: 340;
+            letter-spacing: 3px;
+            color: #7a4d2a;
+            border-left: 5px solid #cd9f76;
+            padding-left: 1.2rem;
+            margin-bottom: 1.8rem;
+            line-height: 1.4;
+        }
+
+        .opening span {
+            display: inline-block;
+            background: #f1e2d4;
+            padding: 0.1rem 0.6rem;
+            border-radius: 30px;
+            font-weight: 420;
+            color: #5e3b1f;
+        }
+
+        .intro-text {
+            font-size: 1.05rem;
+            margin-bottom: 1.6rem;
+            padding: 0.2rem 0.4rem;
+        }
+
+        .intro-text a {
+            color: #aa6f3f;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed #cba07b;
+            transition: background 0.2s, border 0.2s;
+            padding: 0 2px;
+        }
+
+        .intro-text a:hover {
+            background: #ecceb5;
+            border-bottom: 1px solid #975f33;
+            border-radius: 4px;
+        }
+
+        .features-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.4rem 1.8rem;
+            margin: 2rem 0 1.2rem;
+        }
+
+        .feature-item {
+            flex: 1 1 200px;
+            background: #fcf6ef;
+            border-radius: 30px;
+            padding: 1.4rem 1.2rem;
+            box-shadow: inset 0 1px 3px rgba(255,245,235,0.7), 0 6px 12px -8px rgba(80,40,10,0.12);
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-3px);
+            background: #fff9f2;
+        }
+
+        .feature-item em {
+            display: block;
+            font-style: normal;
+            font-weight: 490;
+            font-size: 1.2rem;
+            color: #865835;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #4f3927;
+        }
+
+        .scene-note {
+            background: #ede0d3;
+            border-radius: 60px 20px 60px 20px;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0 1.8rem;
+            color: #392918;
+        }
+
+        .scene-note strong {
+            color: #7c502d;
+            font-weight: 540;
+        }
+
+        .faq-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin: 1.8rem 0 0.6rem;
+        }
+
+        .faq-row {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem 1rem;
+            flex-wrap: wrap;
+            padding: 0.55rem 1rem;
+            background: #f9efe6;
+            border-radius: 80px;
+        }
+
+        .faq-q {
+            font-weight: 540;
+            color: #67442b;
+            min-width: 6rem;
+        }
+
+        .faq-a {
+            color: #493a2a;
+            font-size: 0.96rem;
+        }
+
+        .closing {
+            margin-top: 2.8rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid #dcc3b0;
+            font-size: 0.98rem;
+            color: #5d4634;
+            text-align: right;
+            letter-spacing: 0.3px;
+        }
+
+        .closing a {
+            color: #9a6d44;
+            text-decoration: none;
+            border-bottom: 1px solid #cfb198;
+        }
+
+        .closing a:hover {
+            color: #794f2c;
+            border-color: #794f2c;
+        }
+
+        /* 响应式 */
+        @media (max-width: 500px) {
+            .page-card {
+                padding: 2rem 1.4rem;
+                border-radius: 28px;
+            }
+            .opening {
+                font-size: 1.5rem;
+                padding-left: 0.9rem;
+            }
+            .feature-item {
+                flex: 1 1 100%;
+            }
+            .faq-row {
+                border-radius: 30px;
+                padding: 0.6rem 1rem;
+            }
+            .faq-q {
+                min-width: 4.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-card">
+    <div class="opening">
+        <span>翻阅</span> 一场赛事，也在翻阅生活。
+    </div>
+
+    <div class="intro-text">
+        日常的间隙里，我们常常打开某个熟悉的页面——不是为了追逐战报，而是想安静地查一组历届成绩，对比几支球队的历史数据，或者单纯顺着一条球员的履历延伸读下去。<a href="https://intl-ssl-sjb.com">世界杯</a>所承载的，从来不止是奖杯与哨声，它也是普通夜晚的一盏资料灯，是查询列表里温和的背景音。
+    </div>
+
+    <div class="features-grid">
+        <div class="feature-item">
+            <em>📋 对照清单</em>
+            <p>历届赛果、分组脉络与经典对决，像一本摊开的笔记本，随时可以勾画对照。</p>
+        </div>
+        <div class="feature-item">
+            <em>🔍 延伸阅读</em>
+            <p>从一场比赛出发，翻阅球队沿革、参赛纪录与杯赛趣闻，不赶时间。</p>
+        </div>
+        <div class="feature-item">
+            <em>📎 日常查询</em>
+            <p>赛事日历、过往比分与统计，就像翻阅一本合上的年鉴，安静而可靠。</p>
+        </div>
+    </div>
+
+    <div class="scene-note">
+        <strong>一个熟悉的场景：</strong> 深夜，你打开收藏夹里的页面，想确认某届小组赛的净胜球，或者只是随意看看不同年代的对阵表。没有弹窗催促，没有夸张标语——只有干干净净的记录，以及你与足球之间那份清淡的关联。
+    </div>
+
+    <div class="faq-mini">
+        <div class="faq-row">
+            <span class="faq-q">❓ 怎么用？</span>
+            <span class="faq-a">就像翻开一本书，浏览目录，点进你感兴趣的那一届或那支队伍。</span>
+        </div>
+        <div class="faq-row">
+            <span class="faq-q">❓ 内容偏向？</span>
+            <span class="faq-a">偏向资料性与延伸阅读，适合查证、回忆与安静地闲逛。</span>
+        </div>
+        <div class="faq-row">
+            <span class="faq-q">❓ 适合谁？</span>
+            <span class="faq-a">想从喧嚣中退一步、只看赛事本身的人，或是准备写点东西的球迷。</span>
+        </div>
+    </div>
+
+    <div class="closing">
+        无关喧哗，只是存储与陈列。<br>
+        如果你也喜欢在安静的角落里翻阅，可以随时打开 <a href="https://intl-ssl-sjb.com">世界杯</a> 页面，像打开一本旧手册。
+    </div>
+</div>
+</body>
+</html>
